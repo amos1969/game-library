@@ -1,0 +1,17 @@
+<h2>Budget List Page</h2>
+<table id="budgetTable">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Grade</th>
+      <th>Budget</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let budget of budgets | async">
+      <td>{{budget.id}}</td>
+      <td>{{budget.grade}}</td>
+      <td>{{budget.budget}}</td>
+    </tr>
+  </tbody>
+</table>
