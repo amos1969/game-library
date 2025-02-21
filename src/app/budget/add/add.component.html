@@ -1,6 +1,6 @@
 <div>
     <h2>Add a budget</h2>
-    <form [formGroup]="contactForm" (ngSubmit)="addBudget()">
+    <form [formGroup]="budgetForm" (ngSubmit)="addBudget()">
       <div>
         <label for="grade">Grade</label>
         <input type="text" id="grade" formControlName="grade" />
@@ -9,6 +9,6 @@
         <label for="budget">Budget</label>
         <input type="number" id="budget" formControlName="budget" />
       </div>
-      <button type="submit" [disabled]="!contactForm.valid">Add Budget</button>
+      <button type="submit" [disabled]="!budgetForm.valid">Add Budget</button>
     </form>
   </div>

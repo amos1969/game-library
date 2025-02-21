@@ -1,1 +1,26 @@
-<p>add works!</p>
+<div>
+    <h2>Add a game</h2>
+    <form [formGroup]="gameForm"  (ngSubmit)="addGame()">
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" formControlName="title" />
+      </div>
+      <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="email" formControlName="rating" />
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <input type="text" id="description" formControlName="description" />
+      </div>
+      <div>
+        <label for="company">Company</label>
+        <input type="number" id="company" formControlName="company" />
+      </div>
+      <div>
+        <label for="budget">Budget</label>
+        <input type="number" id="budget" formControlName="budget" />
+      </div>
+      <button type="submit" [disabled]="!gameForm.valid">Add Game</button>
+    </form>
+  </div>

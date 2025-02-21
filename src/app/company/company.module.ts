@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyAddComponent } from './add/add.component';
 import { CompanyListComponent } from './list/list.component';
 import { CompanyUpdateComponent } from './update/update.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { CompanyUpdateComponent } from './update/update.component';
     CompanyUpdateComponent
   ],
   imports: [
-    CommonModule, FormsModule
+    CommonModule, RouterModule, ReactiveFormsModule, FormsModule
   ], 
   providers: [provideHttpClient(withInterceptorsFromDi())] 
 })

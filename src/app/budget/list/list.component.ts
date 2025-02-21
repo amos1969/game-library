@@ -1,10 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { BudgetService } from '../../budget.service';
 
-import { ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-
 @Component({
-  selector: 'app-list',
+  selector: 'app-budget-list',
   standalone: false,
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'

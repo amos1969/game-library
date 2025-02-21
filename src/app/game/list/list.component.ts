@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GameService } from '../../game.service';
 
 @Component({
   selector: 'app-list',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class GameListComponent {
+
+  gameService = inject(GameService);
+  games = this.gameService.games;
+
+  deleteGame(id: number){
+    this.gameService.deleteGame(id);
+  }
 
 }

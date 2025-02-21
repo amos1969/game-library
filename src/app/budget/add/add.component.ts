@@ -10,13 +10,13 @@ import { BudgetService } from '../../budget.service';
   styleUrl: './add.component.css'
 })
 export class BudgetAddComponent {
-  contactForm: FormGroup
+  budgetForm: FormGroup
   formBuilder = inject(FormBuilder)
   budgetService = inject(BudgetService)
   router = inject(Router)
 
   constructor(){
-    this.contactForm = this.formBuilder.group({
+    this.budgetForm = this.formBuilder.group({
       grade: ['', Validators.required],
       budget: [0, Validators.required]
     });
@@ -24,7 +24,7 @@ export class BudgetAddComponent {
   }
 
   addBudget(){
-    this.budgetService.addBudget(this.contactForm.value)
+    this.budgetService.addBudget(this.budgetForm.value)
     this.router.navigate(['/'])
   }
 }

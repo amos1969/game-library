@@ -1,1 +1,18 @@
-<p>add works!</p>
+<div>
+    <h2>Add a company</h2>
+    <form [formGroup]="companyForm"  (ngSubmit)="addCompany()">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email" />
+      </div>
+      <div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" formControlName="phone" />
+      </div>
+      <button type="submit" [disabled]="!companyForm.valid">Add Company</button>
+    </form>
+  </div>

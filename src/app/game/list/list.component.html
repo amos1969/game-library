@@ -1,1 +1,23 @@
-<p>list works!</p>
+<h2>Game List Page</h2>
+
+<table id="gameTable">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>Description</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of games | async">
+      <td>{{game.id}}</td>
+      <td>{{game.title}}</td>
+      <td>{{game.rating}}</td>
+      <td>{{game.description}}</td>
+      <td><button click="deleteGame()">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<button routerLink="add">Add</button>
