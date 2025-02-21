@@ -19,6 +19,7 @@ export class CompanyUpdateComponent {
     
       constructor(){
         this.companyUpdateForm = this.formBuilder.group({
+          id: [0, Validators.required],
           name: ['', Validators.required],
           email: ['', Validators.required],
           phone: ['', Validators.required]
@@ -26,7 +27,7 @@ export class CompanyUpdateComponent {
     
       }
     
-      editCompany(){
+      updateCompany(){
         this.companyService.updateCompany(this.companyUpdateForm.value)
         this.router.navigate(['/'])
       }

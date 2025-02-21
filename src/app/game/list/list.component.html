@@ -16,7 +16,7 @@
       <td>{{game.title}}</td>
       <td>{{game.rating}}</td>
       <td>{{game.description}}</td>
-      <td><button click="deleteGame()">Delete</button></td>
+      <td><a routerLink="/" (click)="deleteGame(game.id)">Link</a></td>
     </tr>
   </tbody>
 </table>

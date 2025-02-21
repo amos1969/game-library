@@ -12,7 +12,7 @@ export class GameService {
   
   get games(): Promise<Game[]> {
     // @ts-ignore
-    return firstValueFrom(this.http.get(`${environment.apiURL}/games`));
+    return firstValueFrom(this.http.get(`${environment.apiURL}/games`)).then(games => games.data); 
     
   }
 

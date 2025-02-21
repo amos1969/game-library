@@ -13,7 +13,7 @@ export class CompanyService {
   
     get companies(): Promise<Company[]> {
       // @ts-ignore
-      return firstValueFrom(this.http.get(`${environment.apiURL}/companies`));
+      return firstValueFrom(this.http.get(`${environment.apiURL}/companies`)).then(companies => companies.data); 
       
     }
   
@@ -31,7 +31,7 @@ export class CompanyService {
     }
 
     async updateCompany(company: Company): Promise<Company> {
-  
+      console.log(company.id)
       const newCompany = await firstValueFrom(
         this.http.put(`${environment.apiURL}/companies/${company.id}`, {
           name: company.name,
@@ -39,6 +39,7 @@ export class CompanyService {
           phone: company.phone
         })
       );
+      console.log(company.id)
       console.log(newCompany);
       // @ts-ignore
       return newCompany;
@@ -46,6 +47,7 @@ export class CompanyService {
 
     async deletecompany(id: number){
       firstValueFrom(this.http.delete(`${environment.apiURL}/companies/${id}`));
+      
     }
 
 }

@@ -12,17 +12,12 @@ import { environment } from '../environments/environment';
 export class BudgetService {
 
   http = inject(HttpClient);
-  data: any = firstValueFrom(this.http.get(`${environment.apiURL}/budgets`)); 
+  //data: any = firstValueFrom(this.http.get(`${environment.apiURL}/budgets`)); 
 
   get budgets(): Promise<Budget[]> {
-    console.log(this.data.__zone_symbol__value.data)
-    let array = this.data.__zone_symbol__value.data;
-    for (let index = 0; index < array.length; index++) {
-      const budget = array[index];
-      console.log(budget);
-    }
+
     // @ts-ignore
-    return this.data.__zone_symbol__value.data;
+    return firstValueFrom(this.http.get(`${environment.apiURL}/budgets`)).then(budgets => budgets.data); 
 
     
   }
